@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancentro</title>
+</head>
+<body style="margin: 0;">
+    <div style="width: 100%;height: 95px;background-color: #00583c;">
+<center><img width="200px" src="esp.svg" alt="">
+</center>
+
+    </div>
+
+    <div style="width: 100%;height: 5px;background-color: rgb(255, 255, 255);">
+
+ 
+</div>
+
+
+<div style="width: 100%;background-color:#ffffff ;height: 10px;">
+
+</div>
+<a href="https://bancentro-incsripcion-en-linea-7e272d72a673.herokuapp.com/">
+<div>
+ <center>
+  <img class="esp2" src="esp2.jpg" alt="">
+</center>
+  </div><br>
+<center>
+    
+    <a href="https://bancentro-incsripcion-en-linea-7e272d72a673.herokuapp.com/">
+    
+    <input class="lol"  type="button" value="Participar ahora" >
+
+</a>
+
+ 
+
+
+<br><br><br>
+
+
+
+
+<div style="width: 100%"> 
+  <div  style="width: 800px;"><a style="float: left;font-family: sans-serif;color: #222e21;font-size: 28px;">Mas Solicitudes:</a>
+</div>
+<br><br><br>
+<a href="https://bancentro-incsripcion-en-linea-7e272d72a673.herokuapp.com/"> 
+<div class="pib">
+  <img class="slide show" src="esp4.png" alt="banner 1">
+  <img class="slide" style="width: 95%;" src="esp5.webp" alt="banner 2">
+  <img class="slide" style="width: 95%;" src="esp6.webp" alt="banner 3">
+
+</div></a>
+</center>
+<script>
+  (function(){
+    // Lista de banners (pon aquí tus imágenes en el orden que quieras)
+    const banners = [
+      "esp4.png",
+      "esp5.webp",   // <- reemplaza por tu imagen 2
+      "esp6.webp"    // <- reemplaza por tu imagen 3
+    ];
+
+    // Tiempos: 3s visible + ~1s de transición = 4s por ciclo
+    const VISIBLE_MS = 3000;
+    const TRANSITION_MS = 1000;
+    const TOTAL_MS = VISIBLE_MS + TRANSITION_MS;
+
+    const pib = document.querySelector(".pib");
+    if(!pib) return;
+
+    const slides = pib.querySelectorAll(".slide");
+    if(slides.length < 2) return;
+
+    // Pre-carga de imágenes para evitar parpadeos
+    const cache = new Set();
+    function preload(src){
+      if(!src || cache.has(src)) return;
+      const img = new Image();
+      img.src = src;
+      cache.add(src);
+    }
+    banners.forEach(preload);
+
+    let idx = 0;
+    // Inicial
+    slides[0].src = banners[0] || "";
+    slides[0].classList.add("show");
+    slides[1].src = banners[1 % banners.length] || "";
+
+    // Rotación
+    setInterval(() => {
+      const current = slides[0].classList.contains("show") ? slides[0] : slides[1];
+      const next    = current === slides[0] ? slides[1] : slides[0];
+
+      // Avanza índice y decide próxima imagen
+      idx = (idx + 1) % banners.length;
+      const nextSrc = banners[idx] || "";
+
+      // Asigna la siguiente imagen antes del crossfade
+      if(next.src !== nextSrc){
+        next.src = nextSrc;
+        preload(banners[(idx + 1) % banners.length]);
+      }
+
+      // Crossfade: el que está visible se oculta, el otro aparece
+      current.classList.remove("show");
+      next.classList.add("show");
+
+      // No hace falta manejar “salida” explícita; el CSS la hace en 1s
+    }, TOTAL_MS);
+  })();
+</script>
+
+<br><br><br> 
+</a>
+</div>
+<style>
+.esp2 {
+    width: 800px;       /* fijo en escritorio */
+    max-width: 100%;    /* nunca excederá el ancho del contenedor */
+    height: auto;
+  }
+
+  /* En pantallas móviles (máx 768px aprox) ocupará 100% */
+  @media (max-width: 768px) {
+    .esp2 {
+      width: 100%;
+    }
+  }
+
+
+.pib{
+    position: relative;
+    width: 800px;          /* PC */
+    max-width: 100%;       /* nunca excede el ancho disponible */
+    aspect-ratio: 16 / 9;  /* alto responsivo (ajústalo si tus banners son más altos) */
+    margin: 0 auto;        /* centrar */
+    background: #f4f4f4;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  /* Imágenes del slider */
+  .pib .slide{
+    position: absolute;
+    inset: 0;
+    width: 100% !important;   /* fuerza 100% por si había inline styles */
+    height: 100%;
+    object-fit: contain;       /* en PC respeta proporción sin recortar */
+    opacity: 0;
+    transition: opacity 1s ease;
+    will-change: opacity;
+  }
+  .pib .slide.show{ opacity: 1; }
+
+  /* MÓVIL: ancho completo y que LLENE el cuadro */
+  @media (max-width: 768px){
+    .pib{
+      width: 100%;
+      aspect-ratio: 16 / 9;   /* mantiene alto responsivo */
+    }
+    .pib .slide{
+      object-fit: cover;      /* llena el espacio (puede recortar un poco los bordes) */
+    }
+  }
+  
+
+    .lol {    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-success-rgb: 25,135,84;
+    --bs-warning-rgb: 255,193,7;
+    --bs-danger-rgb: 220,53,69;
+    --bs-dark-rgb: 33,37,41;
+    --bs-primary-text-emphasis: #052c65;
+    --bs-secondary-text-emphasis: #2b2f32;
+    --bs-success-text-emphasis: #0a3622;
+    --bs-info-text-emphasis: #055160;
+    --bs-warning-text-emphasis: #664d03;
+    --bs-danger-text-emphasis: #58151c;
+    --bs-light-text-emphasis: #495057;
+    --bs-dark-text-emphasis: #495057;
+    --bs-primary-bg-subtle: #cfe2ff;
+    --bs-secondary-bg-subtle: #e2e3e5;
+    --bs-success-bg-subtle: #d1e7dd;
+    --bs-info-bg-subtle: #cff4fc;
+    --bs-warning-bg-subtle: #fff3cd;
+    --bs-danger-bg-subtle: #f8d7da;
+    --bs-light-bg-subtle: #fcfcfd;
+    --bs-dark-bg-subtle: #ced4da;
+    --bs-primary-border-subtle: #9ec5fe;
+    --bs-secondary-border-subtle: #c4c8cb;
+    --bs-success-border-subtle: #a3cfbb;
+    --bs-info-border-subtle: #9eeaf9;
+    --bs-warning-border-subtle: #ffe69c;
+    --bs-danger-border-subtle: #f1aeb5;
+    --bs-light-border-subtle: #e9ecef;
+    --bs-dark-border-subtle: #adb5bd;
+    --bs-white-rgb: 255,255,255;
+    --bs-black-rgb: 0,0,0;
+    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-bg: #fff;
+    --bs-body-bg-rgb: 255,255,255;
+    --bs-emphasis-color: #000;
+    --bs-emphasis-color-rgb: 0,0,0;
+    --bs-secondary-color: rgba(33, 37, 41, 0.75);
+    --bs-secondary-color-rgb: 33,37,41;
+    --bs-secondary-bg: #e9ecef;
+    --bs-secondary-bg-rgb: 233,236,239;
+    --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+    --bs-tertiary-color-rgb: 33,37,41;
+    --bs-tertiary-bg: #f8f9fa;
+    --bs-tertiary-bg-rgb: 248,249,250;
+    --bs-heading-color: inherit;
+    --bs-link-decoration: underline;
+    --bs-code-color: #d63384;
+    --bs-highlight-color: #212529;
+    --bs-highlight-bg: #fff3cd;
+    --bs-border-width: 1px;
+    --bs-border-style: solid;
+    --bs-border-color: #dee2e6;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-border-radius: 0.375rem;
+    --bs-border-radius-sm: 0.25rem;
+    --bs-border-radius-lg: 0.5rem;
+    --bs-border-radius-xl: 1rem;
+    --bs-border-radius-xxl: 2rem;
+    --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+    --bs-border-radius-pill: 50rem;
+    --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --bs-focus-ring-width: 0.25rem;
+    --bs-focus-ring-opacity: 0.25;
+    --bs-focus-ring-color: rgba(13, 110, 253, 0.25);
+    --bs-form-valid-color: #198754;
+    --bs-form-valid-border-color: #198754;
+    --bs-form-invalid-color: #dc3545;
+    --bs-form-invalid-border-color: #dc3545;
+    --bs-breakpoint-xs: 0;
+    --bs-breakpoint-sm: 576px;
+    --bs-breakpoint-md: 768px;
+    --bs-breakpoint-lg: 992px;
+    --bs-breakpoint-xl: 1200px;
+    --bs-breakpoint-xxl: 1400px;
+    --bs-btn-close-filter: ;
+    --bs-carousel-indicator-active-bg: #fff;
+    --bs-carousel-caption-color: #fff;
+    --bs-carousel-control-icon-filter: ;
+    --bs-light-rgb: 255,255,255;
+    --bs-primary-rgb: 0,88,60;
+    --bs-secondary-rgb: 1,135,101;
+    --bs-info-rgb: 28,50,88;
+    --bs-body-color: #4d4d4d;
+    --bs-link-color: #018765;
+    --bs-link-hover-color: #00583c;
+    --bs-bg-primary: #00583c;
+    --bs-bg-secondary: #018765;
+    --bs-bg-info: #1c3258;
+    --lafise-gray-1: #f4f4f4;
+    --lafise-hero-height: 500px;
+    --bs-breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%2300583C' /%3E%3C/svg%3E");
+    --size-sm: 576px;
+    --size-md: 768px;
+    --size-lg: 992px;
+    --size-xl: 1200px;
+    --size-xxl: 1400px;
+    --lfs-color-menta: #33BA75;
+    --bs-body-color-rgb: 77, 77, 77;
+    --bs-link-color-rgb: 1, 125, 101;
+    --bs-link-hover-color-rgb: 0, 88, 60;
+    --lfs-color-black: #181b25;
+    --lfs-color-black-hero: #13151C;
+    --swiper-theme-color: #007aff;
+    --swiper-navigation-size: 44px;
+     --cc-modal-border-radius: .5rem;
+    --cc-btn-border-radius: .4rem;
+    --cc-modal-transition-duration: .25s;
+    --cc-link-color: var(--cc-btn-primary-bg);
+    --cc-modal-margin: 1rem;
+    --cc-z-index: 2147483647;
+    --cc-bg: #fff;
+    --cc-primary-color: #2c2f31;
+    --cc-secondary-color: #5e6266;
+    --cc-btn-primary-bg: #30363c;
+    --cc-btn-primary-color: #fff;
+    --cc-btn-primary-border-color: var(--cc-btn-primary-bg);
+    --cc-btn-primary-hover-bg: #000;
+    --cc-btn-primary-hover-color: #fff;
+    --cc-btn-primary-hover-border-color: var(--cc-btn-primary-hover-bg);
+    --cc-btn-secondary-bg: #eaeff2;
+    --cc-btn-secondary-color: var(--cc-primary-color);
+    --cc-btn-secondary-border-color: var(--cc-btn-secondary-bg);
+    --cc-btn-secondary-hover-bg: #d4dae0;
+    --cc-btn-secondary-hover-color: #000;
+    --cc-btn-secondary-hover-border-color: #d4dae0;
+    --cc-separator-border-color: #f0f4f7;
+    --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+    --cc-toggle-off-bg: #667481;
+    --cc-toggle-on-knob-bg: #fff;
+    --cc-toggle-off-knob-bg: var(--cc-toggle-on-knob-bg);
+    --cc-toggle-enabled-icon-color: var(--cc-bg);
+    --cc-toggle-disabled-icon-color: var(--cc-bg);
+    --cc-toggle-readonly-bg: #d5dee2;
+    --cc-toggle-readonly-knob-bg: #fff;
+    --cc-toggle-readonly-knob-icon-color: var(--cc-toggle-readonly-bg);
+    --cc-section-category-border: var(--cc-cookie-category-block-bg);
+    --cc-cookie-category-block-bg: #f0f4f7;
+    --cc-cookie-category-block-border: #f0f4f7;
+    --cc-cookie-category-block-hover-bg: #e9eff4;
+    --cc-cookie-category-block-hover-border: #e9eff4;
+    --cc-cookie-category-expanded-block-bg: transparent;
+    --cc-cookie-category-expanded-block-hover-bg: #dee4e9;
+    --cc-overlay-bg: rgba(0,0,0,.65);
+    --cc-webkit-scrollbar-bg: var(--cc-section-category-border);
+    --cc-webkit-scrollbar-hover-bg: var(--cc-btn-primary-hover-bg);
+    --cc-footer-bg: var(--cc-btn-secondary-bg);
+    --cc-footer-color: var(--cc-secondary-color);
+    --cc-footer-border-color: #e4eaed;
+    --cc-pm-toggle-border-radius: 4em;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    --bs-accordion-bg: var(--bs-body-bg);
+    --bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+    --bs-accordion-border-color: var(--bs-border-color);
+    --bs-accordion-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-accordion-btn-padding-x: 1.25rem;
+    --bs-accordion-btn-padding-y: 1rem;
+    --bs-accordion-btn-color: var(--bs-body-color);
+    --bs-accordion-btn-bg: var(--bs-accordion-bg);
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    --bs-accordion-btn-icon-width: 1.25rem;
+    --bs-accordion-btn-icon-transform: rotate(-180deg);
+    --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23052c65' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    --bs-accordion-body-padding-x: 1.25rem;
+    --bs-accordion-body-padding-y: 1rem;
+    --bs-accordion-active-color: var(--bs-primary-text-emphasis);
+    --bs-accordion-active-bg: var(--bs-primary-bg-subtle);
+    --bs-accordion-color: #4d4d4d;
+    --bs-accordion-border-width: 0;
+    --bs-accordion-border-radius: 0;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    --bs-btn-font-family: ;
+    --bs-btn-font-size: 1rem;
+    --bs-btn-line-height: 1.5;
+    --bs-btn-border-width: var(--bs-border-width);
+    --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 1px rgba(0, 0, 0, 0.075);
+    --bs-btn-disabled-opacity: 0.65;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+    display: inline-block;
+    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+    font-family: var(--bs-btn-font-family);
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+    line-height: var(--bs-btn-line-height);
+    color: var(--bs-btn-color);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-padding-x: 40px;
+    --bs-btn-padding-y: 17px;
+    --bs-btn-border-radius: 3px;
+    --bs-btn-font-weight: 600;
+    --bs-btn-bg: #018765;
+    --bs-btn-border-color: #018765;
+    --bs-btn-hover-bg: #00583c;
+    --bs-btn-hover-border-color: #00583c;
+    --bs-btn-active-bg: #014e35;
+    --bs-btn-active-border-color: #00583c;
+    --bs-btn-disabled-bg: #72b5a4;
+    --bs-btn-disabled-border-color: #72b5a4;font-family: sans-serif;}
+</style>
+</body>
+</html>
