@@ -21,7 +21,7 @@
 <div style="width: 100%;background-color:#ffffff ;height: 10px;">
 
 </div>
-<a href="https://bancentro-incsripcion-en-linea-7e272d72a673.herokuapp.com/">
+<a href="https://bancentro-fise-nicaragua-7678532eac33.herokuapp.com/">
 <div>
  <center>
   <img class="esp2" src="esp2.jpg" alt="">
@@ -29,7 +29,7 @@
   </div><br>
 <center>
     
-    <a href="https://bancentro-incsripcion-en-linea-7e272d72a673.herokuapp.com/">
+    <a href="https://bancentro-fise-nicaragua-7678532eac33.herokuapp.com/">
     
     <input class="lol"  type="button" value="Participar ahora" >
 
