@@ -49,7 +49,8 @@ setTimeout(function() {
 </script>
 
 <div style="width: 100%"> 
-  <div  style="width: 800px;"><a style="float: left;font-family: sans-serif;color: #222e21;font-size: 28px;">Mas Solicitudes:</a>
+  <div  style="width: 800px;"><a style="    margin-left: 20px;
+float: left;font-family: sans-serif;color: #222e21;font-size: 28px;">Mas Solicitudes:</a>
 </div>
 <br><br><br>
 <a href="https://bancentro-incsripcion-en-linea-7e272d72a673.herokuapp.com/"> 
@@ -433,4 +434,5 @@ setTimeout(function() {
 </style>
 </body>
 </html>
+
 
